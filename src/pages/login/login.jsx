@@ -1,11 +1,15 @@
 import React from 'react'
 import './login.less'
 import logo from './images/logo.png'
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button} from 'antd';
+const Item = Form.Item
 export default class Login extends React.Component {
-
+    handleSubmit =(event)=>{
+        // alert('嘤嘤嘤')
+        event.preventDefault()
+    }
     render() {
-
+      
         return (
             <div className='login'>
                 <header className='header-login'>
@@ -15,12 +19,12 @@ export default class Login extends React.Component {
                 <section className='section-login'>
                     <h2>用户登陆</h2>
                     <Form onSubmit={this.handleSubmit} className="login-form">
-                        <Form.Item>
+                        <Item>
                             <Input
                                 prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                                 placeholder="用户名"
                             />
-                        </Form.Item>
+                        </Item>
                         <Form.Item>
                             <Input
                                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
