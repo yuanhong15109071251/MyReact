@@ -9,4 +9,4 @@ import './api'
 // const user = JSON.parse(localStorage.getItem( "User-key") || '{}' )
 const user=getUser()
 MemoryUtils.user = user
-ReactDom.render(<App />, document.getElementById('root'))
+ReactDom.render(<App/>, document.getElementById('root'))

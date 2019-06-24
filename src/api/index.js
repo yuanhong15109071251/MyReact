@@ -66,3 +66,50 @@ export const reqAddCategory = (categoryName, parentId) => ajax(BASE + '/manage/c
 /* 更新分类的名称 */
 
 export const reqUpdateCategory = ({categoryId,categoryName})=>ajax(BASE+ '/manage/category/update',{categoryId,categoryName},"POST")
+
+
+/* 获取商品分页列表 */
+export const reqProducts = ({pageNum,pageSize})=>ajax(BASE+'/manage/product/list',{pageNum,pageSize})
+
+/* 获取商品搜索名称 */
+// export const reqProductsSearch1 = ({pageNum,pageSize,productName})=>ajax(BASE+'/manage/product/search',{pageNum,pageSize,productName})
+
+// /* 获取商品搜索描述 */
+// export const reqProductsSearch2 = ({pageNum,pageSize,productDesc})=>ajax(BASE+'/manage/product/search',{pageNum,pageSize,productDesc})
+
+/* 获取商品名称和商品描述合并 */
+export const reqProductsSearch = ({
+  pageNum,
+  pageSize,
+  seacrhType,//搜索的类型 可以是布尔值 或者字符串 'productDesc' /'productName'
+  searchName //搜索的关键字
+})=>ajax(BASE+'/manage/product/search',{
+  pageNum,
+  pageSize,
+  [seacrhType]:searchName
+})
+/* 更新商品状态 */
+export const reqUpdateCommodityStatus =(productId,status)=>ajax(BASE+'/manage/product/updateStatus',{productId,status},'POST')
+
+// /* 显示更新商品的页面 */( product._id?'update':'add')
+export const reqreqUpdateCommodity =(categoryId)=>ajax(BASE+ '/manage/category/info',{categoryId})
+
+//删除图片
+export const reqDeleteImage =(name)=>ajax(BASE+'/manage/img/delete',{name},"POST")
+
+//添加/更新商品
+export const reqAddOrUpdate =(product)=>ajax(BASE+'/manage/product/'+(product._id?'update':'add'),product,"POST")
+
+//获取角色列表
+export const reqRoles = () => ajax(BASE + '/manage/role/list')
+//添加角色
+export const reqAddRole=(roleName)=>ajax(BASE+'/manage/role/add',{roleName},"POST")
+//更新角色给角色设置权限
+// export const reqRolesUpdate = (role) => ajax(BASE + '/manage/role/list',role,"POST")
+export const reqRolesUpdate = (role) => ajax('/manage/role/update', role, 'POST')
+// 获取所有用户的列表
+export const reqUsers = () => ajax(BASE + '/manage/user/list')
+// 删除指定用户
+export const reqDeleteUser = (userId) => ajax(BASE + '/manage/user/delete', {userId}, 'POST')
+// 添加/更新用户
+export const reqAddOrUpdateUser = (user) => ajax(BASE + '/manage/user/'+(user._id ? 'update' : 'add'), user, 'POST')

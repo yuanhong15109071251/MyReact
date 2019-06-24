@@ -6,9 +6,6 @@
   返回自己创建的promise对象:
       统一处理请求异常
       异步返回结果数据, 不是包含结果数据的response,是response.data =result
-
-
-
   自己创建的promise有我们自己通过调用resolve()或者reject()来指定结果    
   如果是别人给的promise   通过得到这个promise对象后   promise.then()来指定成功或失败的回调
  */

@@ -24,13 +24,13 @@ export default class Admin extends React.Component {
       return <Redirect to="/login" />
     }
     return (
-      <Layout style={{ height: "100%", color: "#fff" }}>
+      <Layout style={{ minHeight: "100%", color: "#fff" }}>
         <Sider>
           <LeftNav />
         </Sider>
         <Layout>
           <AdminHeader/>
-          <Content style={{ margin: 35, backgroundColor: "#fff", color: "red" }} >
+          <Content  style={{ margin: 35, backgroundColor: "#fff", color: "red" }} >
             <Switch>
               <Route path="/home" component={Home}></Route>
               <Route path="/category" component={Category}></Route>
